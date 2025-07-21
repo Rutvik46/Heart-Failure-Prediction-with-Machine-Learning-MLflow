@@ -7,7 +7,7 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
-from ml_project import logger
+from mlProject import logger
 
 
 @ensure_annotations
