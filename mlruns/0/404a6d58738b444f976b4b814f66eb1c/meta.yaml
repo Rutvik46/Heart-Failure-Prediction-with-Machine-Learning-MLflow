@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/404a6d58738b444f976b4b814f66eb1c/artifacts
+end_time: 1753195696661
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 404a6d58738b444f976b4b814f66eb1c
+run_name: glamorous-pig-804
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753195691844
+status: 3
+tags: []
+user_id: rutvi

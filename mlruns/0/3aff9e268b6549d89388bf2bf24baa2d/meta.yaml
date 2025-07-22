@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/3aff9e268b6549d89388bf2bf24baa2d/artifacts
+end_time: 1753198016174
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3aff9e268b6549d89388bf2bf24baa2d
+run_name: efficient-seal-961
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753198011217
+status: 3
+tags: []
+user_id: rutvi

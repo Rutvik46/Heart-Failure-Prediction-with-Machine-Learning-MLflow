@@ -1,0 +1,22 @@
+artifact_path: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/models/m-bafb05567af64464bf2a6aeca7f4fe25/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.13
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.1.3
+model_id: m-bafb05567af64464bf2a6aeca7f4fe25
+model_size_bytes: 29243
+model_uuid: m-bafb05567af64464bf2a6aeca7f4fe25
+prompts: null
+run_id: 834fa5ee6ad74eeab9ca62d60fea3a71
+utc_time_created: '2025-07-22 17:55:13.687179'

@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/c3bd06ec3f1a48c6b49db2eebf7780db/artifacts
+end_time: 1753206928995
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c3bd06ec3f1a48c6b49db2eebf7780db
+run_name: resilient-moose-648
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753206923913
+status: 3
+tags: []
+user_id: rutvi

@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/ed635863540c4e01862e1ef4e3b3c802/artifacts
+end_time: 1753197846834
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ed635863540c4e01862e1ef4e3b3c802
+run_name: skittish-seal-863
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753197841512
+status: 3
+tags: []
+user_id: rutvi

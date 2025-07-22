@@ -41,7 +41,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                             <h1>Heart Failure Prediction</h1>
-                            <span class="subheading">A Heart Failure Checking Web App</span>
+                            <span class="subheading">Heart Failure Checking Web App</span>
                         </div>
                     </div>
                 </div>
@@ -66,68 +66,102 @@
 </head>
 <body class="form-v9">
 	<div class="page-content">
-		<div class="form-v9-content" style="background-image: url('static/assets/img/form.jpg')">
+		<div class="form-v9-content" style="background-image: url('static/assets/img/form-v9.jpg')">
 			<form class="form-detail" action="/predict" method="post">
                 <h2>Please Fill The Information</h2>
+
                 <div class="form-row-total">
+                    <div class="form-row">
+                        <label for="model">Select Model:</label>
+                        <select name="model" id="model" class="input-text" required>
+                            <option value="">Choose Model</option>
+                            <option value="Support_Vector_Machine">Support Vector Machine</option>
+                            <option value="Knearest_Neighbour">K-Nearest Neighbour</option>
+                            <option value="AdaBoost">AdaBoost</option>
+                        </select>
+                    </div>
                     <div class="form-row">
                         <label for="Age">Age:</label>
                         <input type="number" name="Age" id="Age" class="input-text" placeholder="Age" required>
                     </div>
-                    <div class="form-row">
-                        <label for="Sex">Sex:</label>
-                        <input type="text" name="Sex" id="Sex" class="input-text" placeholder="Sex (M/F)" required>
-                    </div>
                 </div>
 
                 <div class="form-row-total">
                     <div class="form-row">
-                        <label for="ChestPainType">Chest Pain Type:</label>
-                        <input type="text" name="ChestPainType" id="ChestPainType" class="input-text" placeholder="ChestPainType" required>
+                        <label for="Sex">Sex:</label>
+                        <select name="Sex" id="Sex" class="input-text" required>
+                            <option value="">Select Sex</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
                     </div>
+                    <div class="form-row">
+                        <label for="ChestPainType">Chest Pain Type:</label>
+                        <select name="ChestPainType" id="ChestPainType" class="input-text" required>
+                            <option value="">Select Type</option>
+                            <option value="ATA">Atypical Angina</option>
+                            <option value="NAP">Non-anginal Pain</option>
+                            <option value="ASY">Atypical Angina</option>
+                            <option value="TA">Typical Angina</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row-total">
                     <div class="form-row">
                         <label for="RestingBP">Resting Blood Pressure:</label>
                         <input type="number" name="RestingBP" id="RestingBP" class="input-text" placeholder="RestingBP" required>
                     </div>
-                </div>
-
-                <div class="form-row-total">
                     <div class="form-row">
                         <label for="Cholesterol">Cholesterol:</label>
                         <input type="number" name="Cholesterol" id="Cholesterol" class="input-text" placeholder="Cholesterol" required>
                     </div>
+                </div>
+
+                <div class="form-row-total">
                     <div class="form-row">
                         <label for="FastingBS">Fasting Blood Sugar:</label>
                         <input type="number" name="FastingBS" id="FastingBS" class="input-text" placeholder="FastingBS (0 or 1)" required>
                     </div>
+                    <div class="form-row">
+                        <label for="RestingECG">Resting ECG:</label>
+                        <select name="RestingECG" id="RestingECG" class="input-text" required>
+                            <option value="">Select ECG</option>
+                            <option value="Normal">Normal</option>
+                            <option value="ST">ST-T Wave Abnormality</option>
+                            <option value="LVH">Left Ventricular Hypertrophy (LVH)</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-row-total">
-                    <div class="form-row">
-                        <label for="RestingECG">Resting ECG:</label>
-                        <input type="text" name="RestingECG" id="RestingECG" class="input-text" placeholder="RestingECG" required>
-                    </div>
                     <div class="form-row">
                         <label for="MaxHR">Maximum Heart Rate:</label>
                         <input type="number" name="MaxHR" id="MaxHR" class="input-text" placeholder="MaxHR" required>
                     </div>
+                    <div class="form-row">
+                        <label for="ExerciseAngina">Exercise Angina:</label>
+                        <select name="ExerciseAngina" id="ExerciseAngina" class="input-text" required>
+                            <option value="">Select Option</option>
+                            <option value="Y">Yes</option>
+                            <option value="N">No</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-row-total">
-                    <div class="form-row">
-                        <label for="ExerciseAngina">Exercise Angina:</label>
-                        <input type="text" name="ExerciseAngina" id="ExerciseAngina" class="input-text" placeholder="ExerciseAngina (Y/N)" required>
-                    </div>
                     <div class="form-row">
                         <label for="Oldpeak">Oldpeak:</label>
                         <input type="number" step="0.1" name="Oldpeak" id="Oldpeak" class="input-text" placeholder="Oldpeak" required>
                     </div>
-                </div>
-
-                <div class="form-row-total">
                     <div class="form-row">
                         <label for="ST_Slope">ST Slope:</label>
-                        <input type="text" name="ST_Slope" id="ST_Slope" class="input-text" placeholder="ST_Slope" required>
+                        <select name="ST_Slope" id="ST_Slope" class="input-text" required>
+                            <option value="">Select Slope</option>
+                            <option value="Up">Up sloping</option>
+                            <option value="Flat">Flat</option>
+                            <option value="Down">Down Sloping</option>
+                        </select>
                     </div>
                 </div>
 
@@ -150,7 +184,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="https://www.linkedin.com/in/boktiarahmed73/">
+                                <a href="https://www.linkedin.com/in/rutvik-roy/">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -158,7 +192,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://www.youtube.com/dswithbappy">
+                                <a href="https://www.youtube.com">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
@@ -166,7 +200,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://github.com/entbappy">
+                                <a href="https://github.com/Rutvik46">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>

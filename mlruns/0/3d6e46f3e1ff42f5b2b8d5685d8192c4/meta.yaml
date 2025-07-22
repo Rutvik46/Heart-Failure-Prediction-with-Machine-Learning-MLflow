@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/3d6e46f3e1ff42f5b2b8d5685d8192c4/artifacts
+end_time: 1753197836502
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3d6e46f3e1ff42f5b2b8d5685d8192c4
+run_name: stylish-ape-638
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753197831698
+status: 3
+tags: []
+user_id: rutvi

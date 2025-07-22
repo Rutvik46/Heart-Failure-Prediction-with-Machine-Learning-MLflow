@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/6e3be532fad8448c99b9a89be60b8a85/artifacts
+end_time: 1753206923900
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6e3be532fad8448c99b9a89be60b8a85
+run_name: entertaining-shad-59
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753206919226
+status: 3
+tags: []
+user_id: rutvi

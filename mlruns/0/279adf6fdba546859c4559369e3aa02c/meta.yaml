@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/279adf6fdba546859c4559369e3aa02c/artifacts
+end_time: 1753208447116
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 279adf6fdba546859c4559369e3aa02c
+run_name: enchanting-foal-855
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753208443083
+status: 3
+tags: []
+user_id: rutvi

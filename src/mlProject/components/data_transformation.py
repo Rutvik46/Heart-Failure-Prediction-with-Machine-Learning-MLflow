@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 from mlProject import logger
 from mlProject.entity.config_entity import DataTransformationConfig
 import os
@@ -44,7 +45,21 @@ class DataTransformation:
             'Down': 2
         })
 
-        return data
+        # Save mapped data 
+        data.to_csv(os.path.join(self.config.root_dir ,'full_transformed_data.csv'), index=False)
+
+        # Standardize the data for feature scaling (to treat each feature equally important)
+        features = data.iloc[:, :-1]   # all columns except last
+        target = data.iloc[:, -1]
+
+        scaler = StandardScaler()
+        scaled_features = scaler.fit_transform(features)
+
+        # Combine scaled features and original target
+        processed_data = pd.DataFrame(scaled_features, columns=features.columns)
+        processed_data[target.name] = target.values  # add target back as last column
+
+        return processed_data
 
     def train_test_split(self, data: pd.DataFrame) -> None:
         

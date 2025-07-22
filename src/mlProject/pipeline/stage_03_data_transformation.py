@@ -9,11 +9,11 @@ class DataTransformationTrainingPipeline:
         pass
 
     def main(self):
-            config_manager = ConfigurationManager()
-            data_transformation_config = config_manager.get_data_transformation_config()    
-            data_transformation = DataTransformation(config=data_transformation_config)
-            processed_data = data_transformation.data_preprocessing()
-            data_transformation.train_test_split(processed_data)
+        config_manager = ConfigurationManager()
+        data_transformation_config = config_manager.get_data_transformation_config()    
+        data_transformation = DataTransformation(config=data_transformation_config)
+        processed_data = data_transformation.data_preprocessing()
+        data_transformation.train_test_split(processed_data)
             
 
 if __name__ == '__main__':

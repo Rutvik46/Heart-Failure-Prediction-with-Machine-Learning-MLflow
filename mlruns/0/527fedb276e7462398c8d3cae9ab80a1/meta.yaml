@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/527fedb276e7462398c8d3cae9ab80a1/artifacts
+end_time: 1753196516814
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 527fedb276e7462398c8d3cae9ab80a1
+run_name: bittersweet-seal-81
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753196512414
+status: 3
+tags: []
+user_id: rutvi

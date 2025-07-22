@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/0bdb2916ae454ad3af48bc7e440c2daf/artifacts
+end_time: 1753206792893
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0bdb2916ae454ad3af48bc7e440c2daf
+run_name: whimsical-bass-361
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753206786418
+status: 3
+tags: []
+user_id: rutvi

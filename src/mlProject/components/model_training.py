@@ -17,16 +17,10 @@ class ModelTrainer:
         train_data =  pd.read_csv(self.config.train_data_path)
         test_data = pd.read_csv(self.config.test_data_path)
 
-        scaler = StandardScaler()
-
         X_train = train_data.drop([self.config.target_column], axis=1)
-        X_train = scaler.fit_transform(X_train)
-        
+        y_train = train_data[self.config.target_column]
 
         X_test = test_data.drop([self.config.target_column], axis=1)
-        X_test = scaler.fit_transform(X_test)
-
-        y_train = train_data[self.config.target_column]
         y_test = test_data[self.config.target_column]
 
         SVM = SVC(
@@ -45,7 +39,7 @@ class ModelTrainer:
         KNN.fit(X_train, y_train)
         joblib.dump(KNN, os.path.join(self.config.root_dir, self.config.model_names.model2))
 
-        # AdaBoostClassifier
+        # AdaBoost
         AdaBoost= AdaBoostClassifier(n_estimators=self.config.model_param.AdaBoost.n_estimators,
                                    random_state=42
         )

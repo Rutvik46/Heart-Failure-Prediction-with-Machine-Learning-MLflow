@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/3bc5d9b883f94bcaba13ce75986a94b0/artifacts
+end_time: 1753197996458
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3bc5d9b883f94bcaba13ce75986a94b0
+run_name: overjoyed-kite-947
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753197990122
+status: 3
+tags: []
+user_id: rutvi

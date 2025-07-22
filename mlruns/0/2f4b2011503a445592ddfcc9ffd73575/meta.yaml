@@ -1,0 +1,14 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/2f4b2011503a445592ddfcc9ffd73575/artifacts
+end_time: 1753196372875
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2f4b2011503a445592ddfcc9ffd73575
+run_name: smiling-skunk-334
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753196368288
+status: 3
+tags: []
+user_id: rutvi
