@@ -1,4 +1,6 @@
 from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble  import AdaBoostClassifier 
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import os
@@ -27,13 +29,25 @@ class ModelTrainer:
         y_train = train_data[self.config.target_column]
         y_test = test_data[self.config.target_column]
 
-        model = SVC(
-            gamma=self.config.gamma,
-            C=self.config.C,
-            kernel=self.config.kernel,
+        SVM = SVC(
+            gamma=self.config.model_param.Support_Vector_Machine.gamma,
+            C=self.config.model_param.Support_Vector_Machine.C,
+            kernel=self.config.model_param.Support_Vector_Machine.kernel,
             random_state=42 
         )
 
-        model.fit(X_train, y_train)
+        # SVM
+        SVM.fit(X_train, y_train)
+        joblib.dump(SVM, os.path.join(self.config.root_dir, self.config.model_names.model1))
 
-        joblib.dump(model, os.path.join(self.config.root_dir, self.config.model_name))
+        # KNN
+        KNN=KNeighborsClassifier(n_neighbors=self.config.model_param.Knearest_Neighbour.n_neighbours)
+        KNN.fit(X_train, y_train)
+        joblib.dump(KNN, os.path.join(self.config.root_dir, self.config.model_names.model2))
+
+        # AdaBoostClassifier
+        AdaBoost= AdaBoostClassifier(n_estimators=self.config.model_param.AdaBoost.n_estimators,
+                                   random_state=42
+        )
+        AdaBoost.fit(X_train, y_train)
+        joblib.dump(AdaBoost, os.path.join(self.config.root_dir, self.config.model_names.model3))

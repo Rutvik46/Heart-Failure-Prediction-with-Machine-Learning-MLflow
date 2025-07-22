@@ -1,4 +1,11 @@
-Support_Vector_Machine:
-  gamma: 0.01
-  C: 10
-  kernel: 'rbf'
+Models:
+  Support_Vector_Machine:
+    gamma: 0.01
+    C: 15
+    kernel: 'rbf'
+
+  Knearest_Neighbour:
+    n_neighbours: 20
+
+  AdaBoost:
+    n_estimators: 100

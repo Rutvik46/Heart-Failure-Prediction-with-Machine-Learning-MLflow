@@ -19,10 +19,20 @@ model_trainer:
   root_dir: artifacts/model_trainer
   train_data_path: artifacts/data_transformation/train.csv
   test_data_path: artifacts/data_transformation/test.csv
-  model_name: Support_Vector_Machine.joblib
+  model_names: 
+    model1: Support_Vector_Machine.joblib
+    model2: Knearest_Neighbour.joblib
+    model3: AdaBoost.joblib
 
 model_evaluation:
   root_dir: artifacts/model_evaluation
-  model_path: artifacts/model_trainer/Support_Vector_Machine.joblib
+  model_paths: 
+    - artifacts/model_trainer/Support_Vector_Machine.joblib
+    - artifacts/model_trainer/Knearest_Neighbour.joblib
+    - artifacts/model_trainer/AdaBoost.joblib
+
   test_data_path: artifacts/data_transformation/test.csv
-  metrics_file_path: artifacts/model_evaluation/metrics.json
+  metrics_file_paths: 
+    - artifacts/model_evaluation/Support_Vector_Machine.json
+    - artifacts/model_evaluation/Knearest_Neighbour.json
+    - artifacts/model_evaluation/AdaBoost.json

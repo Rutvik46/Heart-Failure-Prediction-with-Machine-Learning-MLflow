@@ -25,18 +25,16 @@ class ModelTrainerConfig:
     root_dir:str
     train_data_path:Path
     test_data_path:Path
-    model_name:str
-    gamma:float 
-    C:float 
-    kernel:str
+    model_names:str
+    model_param:str
     target_column:str
 
 @dataclass(frozen=True)
 class ModelEvaluationConfig:
     root_dir:str
     test_data_path:Path
-    model_path:Path
+    model_paths:dict
     all_params:dict
-    metrics_file_path:Path
+    metrics_file_paths: dict
     target_column:str
     mlflow_url:str

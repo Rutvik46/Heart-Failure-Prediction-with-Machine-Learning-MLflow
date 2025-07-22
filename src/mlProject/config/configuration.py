@@ -54,16 +54,14 @@ class ConfigurationManager:
     
     def get_model_trainer_config(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
-        param = self.params.Support_Vector_Machine
+        param = self.params.Models
         schema = self.schema.TARGET_COLUMN
         model_trainer_config = ModelTrainerConfig(
             root_dir=config.root_dir,
             train_data_path=Path(config.train_data_path),
             test_data_path=Path(config.test_data_path),
-            model_name=config.model_name,
-            gamma=param.gamma,
-            C=param.C,
-            kernel=param.kernel,
+            model_names=config.model_names,
+            model_param=param,
             target_column=schema.name
         )
 
@@ -71,15 +69,15 @@ class ConfigurationManager:
     
     def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config = self.config.model_evaluation
-        param = self.params.Support_Vector_Machine
+        param = self.params.Models
         schema = self.schema.TARGET_COLUMN
 
         model_evaluation_config = ModelEvaluationConfig(
             root_dir=config.root_dir,
             test_data_path=Path(config.test_data_path),
-            model_path=Path(config.model_path),
+            model_paths=config.model_paths,
             all_params=param,
-            metrics_file_path=Path(config.metrics_file_path),
+            metrics_file_paths=config.metrics_file_paths,
             target_column=schema.name,
             mlflow_url="https://dagshub.com/Rutvik46/Heart-Failure-Prediction-with-Machine-Learning-MLflow.mlflow"
         )
