@@ -1,6 +1,6 @@
 from mlProject.constants import *
 from mlProject.utils.common import read_yaml, create_directories
-from mlProject.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
+from mlProject.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
 from pathlib import Path
 
 class ConfigurationManager:
@@ -51,3 +51,19 @@ class ConfigurationManager:
         )
         
         return data_transformation_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        param = self.params.Support_Vector_Machine
+        schema = self.schema.TARGET_COLUMN
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_data_path=Path(config.train_data_path),
+            test_data_path=Path(config.test_data_path),
+            model_name=config.model_name,
+            gamma=param.gamma,
+            C=param.C,
+            target_column=schema.name
+        )
+
+        return model_trainer_config
