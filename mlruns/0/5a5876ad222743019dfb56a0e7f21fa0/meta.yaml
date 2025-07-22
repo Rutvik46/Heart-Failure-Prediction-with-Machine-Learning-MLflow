@@ -1,0 +1,15 @@
+artifact_uri: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/5a5876ad222743019dfb56a0e7f21fa0/artifacts
+end_time: 1753151355042
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5a5876ad222743019dfb56a0e7f21fa0
+run_name: efficient-shrimp-48
+run_uuid: 5a5876ad222743019dfb56a0e7f21fa0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753151349856
+status: 4
+tags: []
+user_id: rutvi

@@ -1,3 +1,4 @@
 Support_Vector_Machine:
-  gamma: 2.0
-  C: 1.0
+  gamma: 0.01
+  C: 10
+  kernel: 'rbf'

@@ -1,6 +1,6 @@
 from mlProject.constants import *
 from mlProject.utils.common import read_yaml, create_directories
-from mlProject.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
+from mlProject.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig
 from pathlib import Path
 
 class ConfigurationManager:
@@ -63,7 +63,25 @@ class ConfigurationManager:
             model_name=config.model_name,
             gamma=param.gamma,
             C=param.C,
+            kernel=param.kernel,
             target_column=schema.name
         )
 
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        param = self.params.Support_Vector_Machine
+        schema = self.schema.TARGET_COLUMN
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=Path(config.test_data_path),
+            model_path=Path(config.model_path),
+            all_params=param,
+            metrics_file_path=Path(config.metrics_file_path),
+            target_column=schema.name,
+            mlflow_url="https://dagshub.com/Rutvik46/Heart-Failure-Prediction-with-Machine-Learning-MLflow.mlflow"
+        )
+
+        return model_evaluation_config

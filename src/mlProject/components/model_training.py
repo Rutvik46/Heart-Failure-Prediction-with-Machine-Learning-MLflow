@@ -30,6 +30,7 @@ class ModelTrainer:
         model = SVC(
             gamma=self.config.gamma,
             C=self.config.C,
+            kernel=self.config.kernel,
             random_state=42 
         )
 
