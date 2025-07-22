@@ -52,7 +52,7 @@ class ModelEvaluation:
                 scores = {"Accuracy":Accuracy, "F1_Score":F1_Score, "Precision_Score":Precision_Score, "Recall_Score":Recall_Score, "AUC_Score":AUC_Score}
                 save_json(path=Path(self.config.metrics_file_paths[index]), data=scores)
 
-                '''
+                
                 mlflow.log_params(self.config.all_params[model_name])
 
                 mlflow.log_metric("Accuracy",Accuracy)
@@ -71,4 +71,4 @@ class ModelEvaluation:
                     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
                     mlflow.sklearn.log_model(models[model_name], "model", registered_model_name=model_name)
                 else:
-                    mlflow.sklearn.log_model(models[model_name], "model")'''
+                    mlflow.sklearn.log_model(models[model_name], "model")
