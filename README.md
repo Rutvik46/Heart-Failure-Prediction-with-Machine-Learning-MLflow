@@ -89,20 +89,20 @@ export MLFLOW_TRACKING_PASSWORD=fdf9d63cdff88d1ed6fd22bc2f3d34a8c0672d1a
 
 	1. EC2 access : It is virtual machine
 
-	2. ECR: Elastic Container registry to save your docker image in aws
+	2. ECR: Elastic Container registry to save  docker image in aws
 
 
 	#Description: About the deployment
 
 	1. Build docker image of the source code
 
-	2. Push your docker image to ECR
+	2. Push  docker image to ECR
 
-	3. Launch Your EC2 
+	3. Launch  EC2 
 
-	4. Pull Your image from ECR in EC2
+	4. Pull  image from ECR in EC2
 
-	5. Lauch your docker image in EC2
+	5. Lauch  docker image in EC2
 
 	#Policy:
 
@@ -112,7 +112,7 @@ export MLFLOW_TRACKING_PASSWORD=fdf9d63cdff88d1ed6fd22bc2f3d34a8c0672d1a
 
 	
 ## 3. Create ECR repo to store/save docker image
-    - Save the URI: 952189540259.dkr.ecr.ca-central-1.amazonaws.com/my-mlproject
+    - Save the URI: 952189540259.dkr.ecr.ca-central-1.amazonaws.com/my-mlproject_ecr
 
 	
 ## 4. Create EC2 machine (Ubuntu) 
@@ -150,7 +150,7 @@ export MLFLOW_TRACKING_PASSWORD=fdf9d63cdff88d1ed6fd22bc2f3d34a8c0672d1a
 
     AWS_ECR_LOGIN_URI = 952189540259.dkr.ecr.ca-central-1.amazonaws.com
 
-    ECR_REPOSITORY_NAME = my-mlproject
+    ECR_REPOSITORY_NAME = my-mlproject_ecr
 
 
 
@@ -159,5 +159,5 @@ export MLFLOW_TRACKING_PASSWORD=fdf9d63cdff88d1ed6fd22bc2f3d34a8c0672d1a
 MLflow
 
  - Its Production Grade
- - Trace all of your expriements
- - Logging & tagging your model
+ - Trace all of  expriements
+ - Logging & tagging  model

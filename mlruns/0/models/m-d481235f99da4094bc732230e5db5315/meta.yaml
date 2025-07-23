@@ -1,0 +1,10 @@
+artifact_location: file:///A:/mlflow/Heart-Failure-Prediction-with-Machine-Learning-MLflow/mlruns/0/models/m-d481235f99da4094bc732230e5db5315/artifacts
+creation_timestamp: 1753226515478
+experiment_id: '0'
+last_updated_timestamp: 1753226519772
+model_id: m-d481235f99da4094bc732230e5db5315
+model_type: null
+name: model
+source_run_id: 2bb9a95308594ff3b01b2095226b9bab
+status: 2
+status_message: null
