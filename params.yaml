@@ -1,10 +1,10 @@
 Models:
   Support_Vector_Machine:
     gamma: 0.01
-    C: 15
+    C: 20
     kernel: 'rbf'
 
-  Knearest_Neighbour:
+  K_Nearest_Neighbours:
     n_neighbours: 20
 
   AdaBoost:

@@ -23,19 +23,18 @@ class ModelTrainer:
         X_test = test_data.drop([self.config.target_column], axis=1)
         y_test = test_data[self.config.target_column]
 
+        # SVM
         SVM = SVC(
             gamma=self.config.model_param.Support_Vector_Machine.gamma,
             C=self.config.model_param.Support_Vector_Machine.C,
             kernel=self.config.model_param.Support_Vector_Machine.kernel,
             random_state=42 
         )
-
-        # SVM
         SVM.fit(X_train, y_train)
         joblib.dump(SVM, os.path.join(self.config.root_dir, self.config.model_names.model1))
 
         # KNN
-        KNN=KNeighborsClassifier(n_neighbors=self.config.model_param.Knearest_Neighbour.n_neighbours)
+        KNN=KNeighborsClassifier(n_neighbors=self.config.model_param.K_Nearest_Neighbours.n_neighbours)
         KNN.fit(X_train, y_train)
         joblib.dump(KNN, os.path.join(self.config.root_dir, self.config.model_names.model2))
 

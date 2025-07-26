@@ -3,6 +3,7 @@ from mlProject import logger
 from sklearn.metrics import accuracy_score, roc_auc_score, f1_score, precision_score, recall_score
 from urllib.parse import urlparse
 import mlflow
+from mlflow.models.signature import infer_signature
 import numpy as np
 import joblib
 from mlProject.utils.common import save_json
@@ -26,22 +27,28 @@ class ModelEvaluation:
     def log_into_mlflow(self):
 
         # Load models
-        SVM = joblib.load(Path(self.config.model_paths[0]))
-        KNN = joblib.load(Path(self.config.model_paths[1]))
+        Support_Vector_Machine = joblib.load(Path(self.config.model_paths[0]))
+        K_Nearest_Neighbours = joblib.load(Path(self.config.model_paths[1]))
         AdaBoost = joblib.load(Path(self.config.model_paths[2]))
 
-        models = {"Support_Vector_Machine":SVM,"Knearest_Neighbour":KNN, "AdaBoost":AdaBoost}
+        models = {"Support_Vector_Machine":Support_Vector_Machine,"K_Nearest_Neighbours":K_Nearest_Neighbours, "AdaBoost":AdaBoost}
 
         # Load test data
         test_data = pd.read_csv(self.config.test_data_path)
         X_test = test_data.drop([self.config.target_column], axis=1)
         Y_test = test_data[self.config.target_column]
 
-        for index, model_name in enumerate(models.keys()):
-            mlflow.set_registry_uri(self.config.mlflow_url)
-            tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+        mlflow.set_registry_uri(self.config.mlflow_url)
+        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
-            with mlflow.start_run():
+        # Set experiment name
+        experiment_name = "Heart-Failure-Prediction"
+        experiment = mlflow.get_experiment_by_name(experiment_name)
+        experiment_id = experiment.experiment_id if experiment else mlflow.create_experiment(experiment_name)
+        print(f"Experiment ID: {experiment_id}")
+
+        for index, model_name in enumerate(models.keys()):
+            with mlflow.start_run(experiment_id=experiment_id) as run:
 
                 predicted_qualities = models[model_name].predict(X_test)
         
@@ -52,15 +59,15 @@ class ModelEvaluation:
                 scores = {"Accuracy":Accuracy, "F1_Score":F1_Score, "Precision_Score":Precision_Score, "Recall_Score":Recall_Score, "AUC_Score":AUC_Score}
                 save_json(path=Path(self.config.metrics_file_paths[index]), data=scores)
 
-                
                 mlflow.log_params(self.config.all_params[model_name])
-
                 mlflow.log_metric("Accuracy",Accuracy)
                 mlflow.log_metric("F1_Score",F1_Score)
                 mlflow.log_metric("Precision_Score",Precision_Score)
                 mlflow.log_metric("Recall_Score",Recall_Score)
                 mlflow.log_metric("AUC_Score",AUC_Score)
 
+                # Log JSON file as artifact
+                mlflow.log_artifact(self.config.metrics_file_paths[index], artifact_path="model_evaluation")
 
                 # Model registry does not work with file store
                 if tracking_url_type_store != "file":

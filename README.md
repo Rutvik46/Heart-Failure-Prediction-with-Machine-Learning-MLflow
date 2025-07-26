@@ -64,7 +64,7 @@ open up you local host and port
 
 MLFLOW_TRACKING_URI=https://dagshub.com/Rutvik46/Heart-Failure-Prediction-with-Machine-Learning-MLflow.mlflow \
 MLFLOW_TRACKING_USERNAME=Rutvik46 \
-MLFLOW_TRACKING_PASSWORD=fdf9d63cdff88d1ed6fd22bc2f3d34a8c0672d1a \
+MLFLOW_TRACKING_PASSWORD=48e78d0ab25ab1d7ab3540f1bf7a0317c5efb9d0 \
 python script.py
 
 Run this to export as env variables:
@@ -75,7 +75,7 @@ export MLFLOW_TRACKING_URI=https://dagshub.com/Rutvik46/Heart-Failure-Prediction
 
 export MLFLOW_TRACKING_USERNAME=Rutvik46 
 
-export MLFLOW_TRACKING_PASSWORD=fdf9d63cdff88d1ed6fd22bc2f3d34a8c0672d1a
+export MLFLOW_TRACKING_PASSWORD=48e78d0ab25ab1d7ab3540f1bf7a0317c5efb9d0
 
 ```
 
